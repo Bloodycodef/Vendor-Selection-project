@@ -1,0 +1,43 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODY1OTk1LCJleHAiOjE3Njk4Njk1OTUsIm5iZiI6MTc2OTg2NTk5NSwianRpIjoiSDU2V2xtdnZKMGFScll3VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.WmLUt50X7-bp742VfXK_-78tKCk35XIxb-qdncQiliU
+@http = http://127.0.0.1:8000/api
+
+
+### =========================
+### LOGIN
+### =========================
+POST {{http}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "admin@mail.com",
+  "password": "password123"
+}
+
+### =========================
+### ME
+### =========================
+GET {{http}}/me
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### =========================
+### REPORT 1
+### =========================
+GET {{http}}/report1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### =========================
+### REPORT 2
+### =========================
+GET {{http}}/report2
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### =========================
+### REPORT 3
+### =========================
+GET {{http}}/report3
+Accept: application/json
+Authorization: Bearer {{token}}

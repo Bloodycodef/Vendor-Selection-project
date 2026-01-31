@@ -5,6 +5,9 @@ use App\Http\Controllers\Api\VendorController;
 use App\Http\Controllers\Api\ItemController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\VendorItemController;
+use App\Http\Controllers\Api\ReportController;
+use App\Http\Controllers\Api\ReportController2;
+use App\Http\Controllers\Api\ReportController3;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -58,4 +61,12 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/vendor-items/{id}', [VendorItemController::class, 'show']);
     Route::put('/vendor-items/{id}', [VendorItemController::class, 'update']);
     Route::delete('/vendor-items/{id}', [VendorItemController::class, 'destroy']);
+    /*
+    |--------------------------------------------------------------------------
+    | REPORT
+    |--------------------------------------------------------------------------
+    */
+    Route::get('/report1', [ReportController::class, 'vendorItems']);
+    Route::get('/report2', [ReportController2::class, 'vendorRanking']);
+    Route::get('/report3', [ReportController3::class, 'vendorItemPriceRate']);
 });

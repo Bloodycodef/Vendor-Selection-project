@@ -24,8 +24,8 @@ class VendorItemController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_vendor' => 'required|exists:vendors,id',
-            'id_item' => 'required|exists:items,id_item',
+            'id_vendor' => 'required|exists:vendor,id_vendor',
+            'id_item' => 'required|exists:item,id_item',
             'harga_sebelum' => 'required|numeric',
             'harga_sekarang' => 'required|numeric'
         ]);

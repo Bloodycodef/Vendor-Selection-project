@@ -1,4 +1,4 @@
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODQ3MTE5LCJleHAiOjE3Njk4NTA3MTksIm5iZiI6MTc2OTg0NzExOSwianRpIjoiYU5JcWF3dnZkd1lta2d5VSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.sC_gYkPxMMQJgSuSgnqMgsSmz8ApYfsXwVhCZ8MOTDk
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODU3MDYyLCJleHAiOjE3Njk4NjA2NjIsIm5iZiI6MTc2OTg1NzA2MiwianRpIjoiaEFxTjEzYzUxOFJIZlA1eSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.HtuAXmacyR9hKeVugOwBa4qzid1JtIrfcvirE4MElJA
 @http = http://127.0.0.1:8000/api
 
 
@@ -41,14 +41,14 @@ Content-Type: application/json
 
 {
   "id_vendor": 1,
-  "id_item": 1,
-  "harga_sebelum": 15000,
+  "id_item": 2,
+  "harga_sebelum": 20000,
   "harga_sekarang": 17000
 }
 
 
 ### get vendor item by id
-GET {{http}}/vendor-items/1
+GET {{http}}/vendor-items/2
 Accept: application/json
 Authorization: Bearer {{token}}
 Content-Type: application/json
