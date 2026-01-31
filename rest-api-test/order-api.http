@@ -1,0 +1,82 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODQzMzU5LCJleHAiOjE3Njk4NDY5NTksIm5iZiI6MTc2OTg0MzM1OSwianRpIjoiQkJFS3p3cFJtcXRkdXlKQyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Q4peKZ8tiucoqDhxJNhBVXQ_uRJuWCywI1m83f5_Pnw
+@http = http://127.0.0.1:8000/api
+
+
+### =========================
+### LOGIN
+### =========================
+POST {{http}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "admin@mail.com",
+  "password": "password123"
+}
+
+
+### =========================
+### ME (cek user login)
+### =========================
+GET {{http}}/me
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### =========================
+### LOGOUT
+### =========================
+POST {{http}}/logout
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### =========================
+### CRUD ORDER
+### =========================
+
+### get all order
+GET {{http}}/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### post order
+POST {{http}}/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "tanggal_order": "2025-01-12",
+  "no_order": "ORD-002",
+  "id_vendor": 1,
+  "id_item": 2
+}
+
+
+### get order by id
+GET {{http}}/orders/2
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+### edit order by id
+PUT {{http}}/orders/1
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "tanggal_order": "2025-01-15",
+  "id_vendor": 1,
+  "id_item": 3
+}
+
+
+### delete order by id
+DELETE {{http}}/orders/2
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json

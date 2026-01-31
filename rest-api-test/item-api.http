@@ -1,0 +1,79 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODQwNjk4LCJleHAiOjE3Njk4NDQyOTgsIm5iZiI6MTc2OTg0MDY5OCwianRpIjoiM29pajdMQ0ZINTJ4SnpUeSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.NkG1uc7JT5X0KaQ2bwrybSRiE5ei4M8uIuQmdT7-TtA
+@http = http://127.0.0.1:8000/api
+
+
+### =========================
+### LOGIN
+### =========================
+POST {{http}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "admin@mail.com",
+  "password": "password123"
+}
+
+
+### =========================
+### ME (cek user login)
+### =========================
+GET {{http}}/me
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### =========================
+### LOGOUT
+### =========================
+POST {{http}}/logout
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### =========================
+### CRUD ITEM
+### =========================
+
+### get all item
+GET {{http}}/items
+Accept: application/json
+Authorization: Bearer {{token}}
+
+
+### post item
+POST {{http}}/items
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "kode_item": "IT03",
+  "nama_item": "Item 3"
+}
+
+
+### get item by id
+GET {{http}}/items/2
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+### edit item by id
+PUT {{http}}/items/1
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "kode_item": "IT01",
+  "nama_item": "Item 1"
+}
+
+
+### delete item by id
+DELETE {{http}}/items/3
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json

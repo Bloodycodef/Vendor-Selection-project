@@ -1,0 +1,63 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzY5ODM5MjMzLCJleHAiOjE3Njk4NDI4MzMsIm5iZiI6MTc2OTgzOTIzMywianRpIjoieFNjVnJCNUg5ak5LMDRJZCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0._Og7-oCUYR4sWF4d6lpHgXdMt8PnWXbsfJkMrVp3Z7Y
+@http = http://127.0.0.1:8000/api
+
+
+### LOGIN
+POST {{http}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "admin@mail.com",
+  "password": "password123"
+}
+
+### ME (cek user login)
+GET {{http}}/me
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### LOGOUT
+POST {{http}}/logout
+Authorization: Bearer {{token}}
+
+### CRUD VENDOR
+
+### get all vendor
+GET {{http}}/vendors
+Accept: application/json
+Authorization: Bearer {{token}} 
+
+### post vendor
+POST {{http}}/vendors
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "kode_vendor": "V03",
+  "nama_vendor": "Vendor 3"
+}
+
+
+### get vendor by id
+GET {{http}}/vendors/1
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+### edit vendor by id
+PUT {{http}}/vendors/1
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nama_vendor": "Vendor 1"
+}
+
+### delete vendor by id
+DELETE {{http}}/vendors/3
+Authorization: Bearer {{token}}
+Accept: application/json
+Content-Type: application/json
